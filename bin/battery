@@ -1,0 +1,10 @@
+#!/bin/bash
+
+percent=$(ioreg -l | grep -i capacity | tr '\n' ' | ' | awk '{printf("%d", $10/$5 * 100)}')
+
+if   (( percent > 80 )); then color='#[nobright fg=green]'
+elif (( percent > 65 )); then color='#[bright fg=yellow]'
+elif (( percent > 40 )); then color='#[bright fg=red]'
+                         else color='#[nobright fg=red]'
+fi
+echo "$color$percent%"
