@@ -12,7 +12,7 @@
 " Init & Vundle ------------------------------------------------------------ {{{
 set nocompatible
 filetype off
-set rtp+=~/dotfiles/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Need this for Vundle to work
