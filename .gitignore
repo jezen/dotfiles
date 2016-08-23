@@ -28,6 +28,7 @@
 /.no-asepsis-os-restriction
 /.npm
 /.npmrc
+/.node-gyp
 /.psql_history
 /.rnd
 /.rvm
