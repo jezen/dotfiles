@@ -1,0 +1,76 @@
+CopyArrivalDate yes
+SyncState *
+Create Slave
+Expunge Both
+
+IMAPAccount personal
+Host mail.jezenthomas.com
+User jezen@jezenthomas.com
+PassCmd "gpg --use-agent --no-tty --decrypt ~/.mutt/personalpw.gpg"
+SSLType STARTTLS
+CertificateFile ~/.mutt/mail.jezenthomas.com.cert
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/INBOX
+
+Channel personal-default
+Master :personal-remote:
+Slave :personal-local:
+Patterns INBOX
+
+Channel personal-sent
+Master :personal-remote:"Sent"
+Slave :personal-local:"Sent"
+
+Channel personal-archive
+Master :personal-remote:"Archive"
+Slave :personal-local:"Archive"
+
+Channel personal-drafts
+Master :personal-remote:"Drafts"
+Slave :personal-local:"Drafts"
+
+Channel personal-gmail-allmail
+Master :personal-remote:"[Gmail]/All Mail"
+Slave :personal-local:"GmailAllMail"
+
+Channel personal-gmail-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:"GmailSentMail"
+
+Channel personal-trash
+Master :personal-remote:"Trash"
+Slave :personal-local:"Trash"
+
+Channel personal-uber
+Master :personal-remote:"Uber"
+Slave :personal-local:"Uber"
+
+Channel personal-hbq
+Master :personal-remote:"HBQ"
+Slave :personal-local:"HBQ"
+
+Group personal
+Channel personal-default
+Channel personal-sent
+Channel personal-archive
+Channel personal-drafts
+Channel personal-trash
+Channel personal-gmail-allmail
+Channel personal-gmail-sent
+Channel personal-uber
+Channel personal-hbq
+
+IMAPAccount uxpin
+Host imap.gmail.com
+Port 993
+User jezen.thomas@uxpin.com
+Pass secretpassword
+SystemCertificates no
+SSLType IMAPS
+AuthMechs PLAIN
+CertificateFile ~/.mutt/Equifax_Secure_CA.cert
