@@ -33,6 +33,7 @@
 /.rvm
 /.sqlite_history
 /.ssh
+/.stack
 /.tmp
 /.trc
 /.vagrant.d
