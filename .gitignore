@@ -43,6 +43,7 @@
 /.wget-hsts
 /.zcompdump*
 /.zsh_history
+/Applications
 /Desktop
 /Documents
 /Downloads
