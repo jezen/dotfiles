@@ -45,6 +45,7 @@
 /.viminfo
 /.wget-hsts
 /.zcompdump*
+/.zsh-update
 /.zsh_history
 /Applications
 /Desktop
