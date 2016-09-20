@@ -1,2 +1,3 @@
 --ignore-file=is:tags
 --ignore-dir=.stack-work
+--ignore-dir=tmp
