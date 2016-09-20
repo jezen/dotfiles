@@ -29,6 +29,7 @@
 /.npm
 /.npmrc
 /.node-gyp
+/.oh-my-zsh
 /.psql_history
 /.rnd
 /.rvm
