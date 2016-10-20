@@ -13,6 +13,7 @@
 /.config
 /.cups
 /.ec2-keys
+/.elm
 /.gem
 /.ghc
 /.gnupg
@@ -26,12 +27,14 @@
 /.netrc
 /.newsbeuter
 /.no-asepsis-os-restriction
+/.node-gyp
 /.node_repl_history
 /.npm
 /.npmrc
-/.node-gyp
 /.oh-my-zsh
+/.oracle_jre_usage/
 /.psql_history
+/.rediscli_history
 /.rnd
 /.rvm
 /.sqlite_history
