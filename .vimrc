@@ -169,7 +169,7 @@ nnoremap N Nzzzv
 
 " Ignore stuff from Command-T
 set wildignore+=*.jpg,*.png,*.gif,pics                            " binary images
-let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site"
+let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff"
 " }}}
 " Folding ------------------------------------------------------------------ {{{
 set foldlevelstart=0
