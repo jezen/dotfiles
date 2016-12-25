@@ -24,6 +24,8 @@
 /.lesshst
 /.local
 /.mail
+/.mutt/alias
+/.mutt/signature
 /.netrc
 /.newsbeuter
 /.no-asepsis-os-restriction

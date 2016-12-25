@@ -30,6 +30,8 @@ Plugin 'https://github.com/mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/chrisbra/unicode.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'godlygeek/tabular'
 
 " Language specific
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -171,6 +173,7 @@ nnoremap N Nzzzv
 " Ignore stuff from Command-T
 set wildignore+=*.jpg,*.png,*.gif,pics                            " binary images
 let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff"
+let g:CommandTTraverseSCM = 'pwd'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
 set foldlevelstart=0
@@ -208,6 +211,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
   au BufNewFile,BufRead *.txt,conf/messages.* call FoldParagraphs()
   au BufNewFile,BufRead *.md setlocal syntax=off tw=80
+  au BufEnter *.hs set formatprg=xargs\ pointfree
   " Automatically open quickfix window when calling :make, or close the
   " quickfix window if there are no errors to report
   au QuickFixCmdPost [^l]* nested cwindow
@@ -304,4 +308,23 @@ nnoremap <leader>rt :call RunTestFile()<cr>
 " Corresponds with G. Bernhardt’s Cucumber wrapper
 nnoremap <leader>C :w\|:!clear & script/features --format progress<cr>
 nnoremap <leader>c :w\|:!clear & script/features --profile wip --format pretty<cr>
+"}}}
+" Syntastic ---------------------------------------------------------------- {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+"}}}
+" Haskell ------------------------------------------------------------------ {{{
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a: :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
+vmap a< :Tabularize /<-<CR>
+vmap a( :Tabularize /(<CR>
 "}}}

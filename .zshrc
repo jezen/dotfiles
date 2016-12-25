@@ -22,7 +22,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jgt/.bin:#PATH"
+export PATH="/Users/jgt/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jgt/.bin:#PATH"
+#export PATH=$(stack --verbosity 0 path --bin-path)
 
 # Setup aliases
 source ~/.aliases
