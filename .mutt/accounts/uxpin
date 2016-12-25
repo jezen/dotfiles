@@ -1,0 +1,20 @@
+# vi: ft=muttrc
+
+set from      = "jezen.thomas@uxpin.com"
+set sendmail  = "/usr/local/bin/msmtp --account=uxpin"
+
+set spoolfile = "+uxpin/INBOX"
+set record    = "+uxpin/Sent"
+set mbox      = "+uxpin/Archive"
+set postponed = "+uxpin/Drafts"
+
+set header_cache     = ~/.mutt/cache/uxpin-headers # where to store headers
+set message_cachedir = ~/.mutt/cache/uxpin-bodies  # where to store bodies
+
+macro index,pager y "<save-message>+uxpin/Archive<enter>" "Archive"
+macro index,pager d "<save-message>+uxpin/Trash<enter>" "Trash"
+macro index,pager gi "<change-folder>+uxpin/INBOX<enter>" "Jump to Inbox"
+
+# Sync email
+macro index F "<shell-escape>clear&mbsync --verbose uxpin<enter>"
+macro index f "<shell-escape>clear&mbsync --verbose uxpin-default<enter>"

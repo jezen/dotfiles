@@ -25,7 +25,7 @@ colorscheme grb256
 
 " Pimp my editor
 Plugin 'bling/vim-airline'
-Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'wincent/command-t'
 Plugin 'https://github.com/mileszs/ack.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-fugitive'

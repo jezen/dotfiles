@@ -1,0 +1,34 @@
+#!/bin/bash
+
+email() {
+  echo "$1" \
+    | grep ^"From: " \
+    | rev \
+    | cut -d ' ' -f 1 \
+    | rev \
+    | sed 's/[<>]//g'
+}
+
+nick() {
+  echo "$1" \
+    | grep ^"From: " \
+    | cut -d ' ' -f 2- \
+    | rev \
+    | cut -d ' ' -f 2- \
+    | rev \
+    | tr -d -c '[:alpha:][:space:]' \
+    | sed 's/ /./g' \
+    | tr '[:upper:]' '[:lower:]'
+}
+
+MSG=$(cat)
+ALIAS=$(printf "%s %s %s" "alias" "$(nick "$MSG")" "$(email "$MSG")")
+REGEX='^From: .+ <.+@.+>'
+
+[[ $(echo "$MSG" | grep ^"From: ")  =~ $REGEX ]] \
+  && (! grep -Fxq "$ALIAS" "$HOME/.mutt/alias") \
+  && [[ ! "$ALIAS" == *33mail.com* ]] \
+  && [[ "$ALIAS" =~ ^alias ]] \
+  && echo "$ALIAS" >> "$HOME/.mutt/alias"
+
+echo "${MSG}"
