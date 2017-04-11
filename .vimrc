@@ -32,6 +32,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/chrisbra/unicode.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'godlygeek/tabular'
+Plugin 'reedes/vim-pencil'
+Plugin 'itchyny/calendar.vim'
 
 " Language specific
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -54,6 +56,11 @@ set noesckeys
 "set cryptmethod=blowfish2 " https://dgl.cx/2014/10/vim-blowfish
 set exrc " Enable use of project-specific .vimrc
 set secure " Only run autocommands owned by me
+
+" https://github.com/itchyny/calendar.vim
+let g:calendar_google_calendar=1
+let g:calendar_date_month_name=1
+let g:calendar_week_number=1
 " }}}
 " UI ----------------------------------------------------------------------- {{{
 set number
@@ -145,7 +152,6 @@ endfunction
 " Toggle alternate buffer
 nnoremap <leader><leader> <c-^>
 
-" Emoticons
 iabbrev ldis ಠ_ಠ
 iabbrev lsir ಠ_ರೃ
 iabbrev lhap ツ
@@ -153,6 +159,11 @@ iabbrev fliptable （╯°□°）╯ ┻━┻
 iabbrev *shrug* ¯\_(ツ)_/¯
 iabbrev herewego ᕕ( ᐛ )ᕗ
 iabbrev dealwithit (⌐■_■)
+iabbrev yeahdawg 
+      \<cr>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+      \<cr>░░░░░ ░░░░▀█▄▀▄▀██████░▀█▄▀▄▀████▀
+      \<cr>░░░░ ░░░░░░░▀█▄█▄███▀░░░▀██▄█▄█▀
+
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
 " }}}
@@ -171,8 +182,8 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Ignore stuff from Command-T
-set wildignore+=*.jpg,*.png,*.gif,pics                            " binary images
-let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff"
+set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
+let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff,resources/build,bower,bower_components"
 let g:CommandTTraverseSCM = 'pwd'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
@@ -210,8 +221,9 @@ if has("autocmd")
   au BufNewFile,BufRead *.json setfiletype json syntax=javascript
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
   au BufNewFile,BufRead *.txt,conf/messages.* call FoldParagraphs()
-  au BufNewFile,BufRead *.md setlocal syntax=off tw=80
   au BufEnter *.hs set formatprg=xargs\ pointfree
+  " https://codeyarns.com/2015/02/02/cannot-close-buffer-of-netrw-in-vim/
+  au FileType netrw setl bufhidden=wipe
   " Automatically open quickfix window when calling :make, or close the
   " quickfix window if there are no errors to report
   au QuickFixCmdPost [^l]* nested cwindow
@@ -230,12 +242,6 @@ augroup line_return
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \     execute 'normal! g`"zvzz' |
     \ endif
-augroup END
-
-" Auto-reload vim when vimrc changes
-augroup myvimrc
-    au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
 augroup END
 " }}}
 " Ruby on Rails ------------------------------------------------------------ {{{
@@ -291,6 +297,8 @@ function! RunTests(filename)
           :!echo > .test-commands
           redraw!
         " Fall back to a blocking test run with Bundler
+        elseif filereadable("Vagrantfile")
+            exec ":!clear & time through_vagrant rspec --color " . a:filename
         elseif filereadable("Gemfile")
             exec ":!clear & bundle exec rspec --color " . a:filename
         " Fall back to a normal blocking test run
@@ -327,4 +335,5 @@ vmap a: :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
 vmap a< :Tabularize /<-<CR>
 vmap a( :Tabularize /(<CR>
+vmap a\| :Tabularize /\|<CR>
 "}}}
