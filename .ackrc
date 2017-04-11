@@ -2,3 +2,4 @@
 --ignore-dir=.stack-work
 --ignore-dir=tmp
 --ignore-dir=elm-stuff
+--ignore-dir=log
