@@ -54,6 +54,10 @@ Channel personal-hbq
 Master :personal-remote:"HBQ"
 Slave :personal-local:"HBQ"
 
+Channel personal-nbm
+Master :personal-remote:"NBM"
+Slave :personal-local:"NBM"
+
 Group personal
 Channel personal-default
 Channel personal-sent
@@ -64,13 +68,45 @@ Channel personal-gmail-allmail
 Channel personal-gmail-sent
 Channel personal-uber
 Channel personal-hbq
+Channel personal-nbm
 
-IMAPAccount uxpin
+IMAPAccount zimpler
 Host imap.gmail.com
 Port 993
-User jezen.thomas@uxpin.com
-Pass secretpassword
+User jezen@zimpler.com
+PassCmd "gpg --use-agent --no-tty --decrypt ~/.mutt/zimplerpw.gpg"
 SystemCertificates no
 SSLType IMAPS
 AuthMechs PLAIN
 CertificateFile ~/.mutt/Equifax_Secure_CA.cert
+
+IMAPStore zimpler-remote
+Account zimpler
+
+MaildirStore zimpler-local
+Path ~/.mail/zimpler/
+Inbox ~/.mail/zimpler/INBOX
+
+Channel zimpler-default
+Master :zimpler-remote:
+Slave :zimpler-local:
+Patterns INBOX
+
+Channel zimpler-sent
+Master :zimpler-remote:"[Gmail]/Sent Mail"
+Slave :zimpler-local:"Sent"
+
+Channel zimpler-drafts
+Master :zimpler-remote:"[Gmail]/Drafts"
+Slave :zimpler-local:"Drafts"
+
+Channel zimpler-trash
+Master :zimpler-remote:"[Gmail]/Trash"
+Slave :zimpler-local:"Trash"
+
+Group zimpler
+Channel zimpler-default
+Channel zimpler-sent
+Channel zimpler-drafts
+Channel zimpler-trash
+

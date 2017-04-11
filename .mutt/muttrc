@@ -40,8 +40,8 @@ source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
 
 # Sidebar Patch ----------------------------------------------------------------
 #set sidebar_delim   = '  │'
-#set sidebar_visible = yes
-#set sidebar_width   = 24
+set sidebar_visible = yes
+set sidebar_width   = 24
 #color sidebar_new color221 color233
 
 # Alias Setup ------------------------------------------------------------------
@@ -180,7 +180,13 @@ mailboxes "+-- jgt ----------------" \
           +personal/GmailSentMail \
           +personal/Uber \
           +personal/HBQ \
+          +personal/NBM \
           +temporary/search \
+          "+-- zimpler ------------" \
+          +zimpler/INBOX \
+          +zimpler/Drafts \
+          +zimpler/Sent \
+          +zimpler/Trash \
           "+-- uxpin --------------" \
           +uxpin/INBOX \
           +uxpin/Archive \
@@ -189,7 +195,6 @@ mailboxes "+-- jgt ----------------" \
           +uxpin/Trash \
 
 folder-hook personal/*  source ~/.mutt/accounts/personal
+folder-hook zimpler/*   source ~/.mutt/accounts/zimpler
 folder-hook uxpin/*     source ~/.mutt/accounts/uxpin
 
-# http://wcm1.web.rice.edu/mutt-tips.html
-set text_flowed=yes
