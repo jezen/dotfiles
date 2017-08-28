@@ -1,0 +1,118 @@
+#!/bin/bash
+
+local_branch() {
+  git name-rev --name-only HEAD
+}
+
+tracking_remote() {
+  git config branch."$(local_branch)".remote
+}
+
+tracking_branch() {
+  git config branch."$(local_branch)".merge | cut -d / -f 3
+}
+
+merge_base() {
+  git merge-base "$1" "$2"
+}
+
+warn_when_not_in_git_repo() {
+  if [ "$(git status > /dev/null 2>&1; echo $?)" != "0" ]
+  then
+    echo "You need to run this from within a Git directory."
+    echo "Current working directory: $(pwd)"
+    exit 1
+  fi
+}
+
+abort_when_up_to_date() {
+  if [ "$HEAD" == "$REMOTE" ]
+  then
+    echo "Neither your local branch '$CURRENT_BRANCH', nor the remote branch '$UPSTREAM_BRANCH' have moved on."
+    echo "Already up-to-date."
+    exit 0
+  fi
+}
+
+report_local_commits() {
+  N=$(echo "$NEW_COMMITS_LOCALLY" | wc -l | xargs)
+  [[ $N == 1 ]] && C="commit" || C="commits"
+  echo "You have $N new $C on '$CURRENT_BRANCH'."
+}
+
+report_remote_commits() {
+  NEW_COMMITS_ON_REMOTE=$(git rev-list "$MERGE_BASE".."$REMOTE" | wc -l | xargs)
+  if [ "$NEW_COMMITS_ON_REMOTE" == 1 ]
+  then
+    echo "There is 1 new commit on '$UPSTREAM_BRANCH'."
+  else
+    echo "There are $NEW_COMMITS_ON_REMOTE commits on '$UPSTREAM_BRANCH'."
+  fi
+}
+
+abort_when_upstream_has_not_moved_on() {
+  if [ "$MERGE_BASE" == "$REMOTE" ]
+  then
+    echo "Remote branch '$UPSTREAM_BRANCH' has not moved on."
+    echo "Already up-to-date."
+    exit 0
+  fi
+}
+
+fetch() {
+  echo "Executing: git fetch origin"
+  git fetch origin > /dev/null 2>&1
+}
+
+git_stash() {
+  echo "Working directory dirty. Stashing..."
+  echo "Executing: git stash"
+  git stash
+}
+
+git_stash_pop() {
+  echo "Reapplying local changes..."
+  echo "Executing: git stash pop"
+  git stash pop
+}
+
+shmart_pull() {
+  warn_when_not_in_git_repo
+  fetch
+
+  CURRENT_BRANCH=$(local_branch)
+  UPSTREAM_BRANCH=$(tracking_remote)/$(tracking_branch)
+  HEAD=$(git rev-parse HEAD)
+  REMOTE=$(git rev-parse "$UPSTREAM_BRANCH")
+
+  abort_when_up_to_date
+
+  MERGE_BASE=$(merge_base "$HEAD" "$REMOTE")
+  NEW_COMMITS_LOCALLY=$(git rev-list "$MERGE_BASE"..HEAD)
+
+  report_local_commits
+  abort_when_upstream_has_not_moved_on
+  report_remote_commits
+
+  git diff --no-ext-diff --quiet --exit-code
+  STASH_REQUIRED=$?
+
+  [[ "$STASH_REQUIRED" = 1 ]] && git_stash
+
+  if [[ "$MERGE_BASE" == "$HEAD" ]]
+  then
+    echo "Local branch '$CURRENT_BRANCH' has not moved on. Fast-forwarding..."
+    echo "Executing: git merge --ff-only $UPSTREAM_BRANCH"
+    git merge --ff-only "$UPSTREAM_BRANCH"
+  else
+    echo "Both local and remote branches have moved on. Branch 'master' needs
+    to be rebased onto 'origin/master'"
+    echo "Executing: git rebase -p $UPSTREAM_BRANCH"
+    git rebase -p "$UPSTREAM_BRANCH" 2>&1
+  fi
+
+  [[ "$STASH_REQUIRED" = 1 ]] && git_stash_pop
+
+  git shmart-log "$MERGE_BASE".."$UPSTREAM_BRANCH"
+}
+
