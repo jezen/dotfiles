@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PWD=`pwd`
+CMD=`echo $@ | sed s^$PWD^/vagrant^g`
+vagrant ssh -c "cd /vagrant && $CMD"
