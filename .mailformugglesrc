@@ -1,0 +1,5 @@
+from jezen@jezenthomas.com
+host mail.jezenthomas.com
+pass gpg --use-agent --no-tty --decrypt ~/.mutt/personalpw.gpg
+user jezen@jezenthomas.com
+
