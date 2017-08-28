@@ -35,12 +35,10 @@ source /usr/local/opt/autoenv/activate.sh
 # I’m clumsy and I keep closing panes/sessions with <c-d>
 set -o ignoreeof
 
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
-if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
-  export GPG_AGENT_INFO
-else
-  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
-fi
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source ~/.bin/dinghy-connect.sh
+
+# Please get this shit out of my Ansible
+export ANSIBLE_NOCOWS=1
 

@@ -132,4 +132,4 @@
 #	default = matching
 
 [gpg]
-	program = gpg2
+	program = gpg

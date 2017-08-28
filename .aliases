@@ -64,6 +64,6 @@ alias airadio="mpg123 http://mp3.ai-radio.org"
 # Hit `tms` then <tab> to select a running tmux session
 alias tms="tmux attach -d -t"
 
-alias gpg="gpg2"
+#alias gpg="gpg2"
 
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
