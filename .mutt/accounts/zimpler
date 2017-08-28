@@ -1,0 +1,21 @@
+# vi: ft=muttrc
+
+set from      = "jezen@zimpler.com"
+set sendmail  = "/usr/local/bin/msmtp --account=zimpler"
+
+set spoolfile = "+zimpler/INBOX"
+set record    = "+zimpler/Sent"
+set mbox      = "+zimpler/Archive"
+set postponed = "+zimpler/Drafts"
+
+set header_cache     = ~/.mutt/cache/zimpler-headers # where to store headers
+set message_cachedir = ~/.mutt/cache/zimpler-bodies  # where to store bodies
+
+macro index,pager y "<save-message>+zimpler/Archive<enter>" "Archive"
+macro index,pager d "<save-message>+zimpler/Trash<enter>" "Trash"
+macro index,pager gi "<change-folder>+zimpler/INBOX<enter>" "Jump to Inbox"
+
+# Sync email
+macro index F "<shell-escape>clear&mbsync --verbose zimpler<enter>"
+macro index f "<shell-escape>clear&mbsync --verbose zimpler-default<enter>"
+
