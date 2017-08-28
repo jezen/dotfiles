@@ -23,8 +23,8 @@
 	ci = commit
 	dc = diff --cached
 	aa = add --all
-	sp = smart-pull
-	sl = smart-log
+	sp = shmart-pull
+	sl = shmart-log
 
 [diff]
 	tool = vimdiff
