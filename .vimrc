@@ -34,6 +34,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'godlygeek/tabular'
 Plugin 'reedes/vim-pencil'
 Plugin 'itchyny/calendar.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
 
 " Language specific
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -42,6 +44,9 @@ Plugin 'pbrisbin/vim-syntax-shakespeare'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elmcast/elm-vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'luochen1990/rainbow'
+Plugin 'enomsg/vim-haskellConcealPlus'
 
 call vundle#end()
 filetype plugin indent on
@@ -183,7 +188,7 @@ nnoremap N Nzzzv
 
 " Ignore stuff from Command-T
 set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
-let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff,resources/build,bower,bower_components"
+let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff,resources/build,bower,bower_components,compiled"
 let g:CommandTTraverseSCM = 'pwd'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
@@ -221,7 +226,8 @@ if has("autocmd")
   au BufNewFile,BufRead *.json setfiletype json syntax=javascript
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
   au BufNewFile,BufRead *.txt,conf/messages.* call FoldParagraphs()
-  au BufEnter *.hs set formatprg=xargs\ pointfree
+  au BufNewFile,BufRead *.hs set formatprg=xargs\ pointfree
+  au BufLeave           *.hs set formatprg=
   " https://codeyarns.com/2015/02/02/cannot-close-buffer-of-netrw-in-vim/
   au FileType netrw setl bufhidden=wipe
   " Automatically open quickfix window when calling :make, or close the
@@ -336,4 +342,8 @@ vmap a- :Tabularize /-><CR>
 vmap a< :Tabularize /<-<CR>
 vmap a( :Tabularize /(<CR>
 vmap a\| :Tabularize /\|<CR>
+vmap a. :Tabularize /\.<CR>
+"}}}
+" Clojure ------------------------------------------------------------------ {{{
+au BufNewFile,BufRead *.clj let g:rainbow_active = 1
 "}}}
