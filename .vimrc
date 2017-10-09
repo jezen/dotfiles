@@ -225,6 +225,7 @@ if has("autocmd")
   " Treat .json files as .js
   au BufNewFile,BufRead *.json setfiletype json syntax=javascript
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
+  au BufNewFile,BufRead *.thor set filetype=ruby
   au BufNewFile,BufRead *.txt,conf/messages.* call FoldParagraphs()
   au BufNewFile,BufRead *.hs set formatprg=xargs\ pointfree
   au BufLeave           *.hs set formatprg=
