@@ -1,14 +1,14 @@
 CopyArrivalDate yes
 SyncState *
-Create Slave
+Create Both
 Expunge Both
 
 IMAPAccount personal
-Host mail.jezenthomas.com
+Host imap.fastmail.com
 User jezen@jezenthomas.com
-PassCmd "gpg --use-agent --no-tty --decrypt ~/.mutt/personalpw.gpg"
-SSLType STARTTLS
-CertificateFile ~/.mutt/mail.jezenthomas.com.cert
+Port 993
+SSLType IMAPS
+PassCmd "gpg --use-agent --no-tty --decrypt ~/.mutt/personal_imap.gpg"
 
 IMAPStore personal-remote
 Account personal
@@ -78,7 +78,7 @@ PassCmd "gpg --use-agent --no-tty --decrypt ~/.mutt/zimplerpw.gpg"
 SystemCertificates no
 SSLType IMAPS
 AuthMechs PLAIN
-CertificateFile ~/.mutt/Equifax_Secure_CA.cert
+CertificateFile ~/.mutt/gmail.cert
 
 IMAPStore zimpler-remote
 Account zimpler
