@@ -44,7 +44,7 @@ Plugin 'pbrisbin/vim-syntax-shakespeare'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'elmcast/elm-vim'
-Plugin 'tpope/vim-fireplace'
+"Plugin 'tpope/vim-fireplace'
 Plugin 'luochen1990/rainbow'
 Plugin 'enomsg/vim-haskellConcealPlus'
 
@@ -188,8 +188,20 @@ nnoremap N Nzzzv
 
 " Ignore stuff from Command-T
 set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
-let g:CommandTWildIgnore=&wildignore . ",node_modules,vendor/bundle,dump,tmp,dist,_cache,_site,elm-stuff,resources/build,bower,bower_components,compiled"
-let g:CommandTTraverseSCM = 'pwd'
+let g:CommandTWildIgnore=&wildignore
+let g:CommandTWildIgnore.=',*/node_modules'
+let g:CommandTWildIgnore.=',*/vendor/bundle'
+let g:CommandTWildIgnore.=',*/dump'
+let g:CommandTWildIgnore.=',*/tmp'
+let g:CommandTWildIgnore.=',*/dist'
+let g:CommandTWildIgnore.=',*/_cache'
+let g:CommandTWildIgnore.=',*/_site'
+let g:CommandTWildIgnore.=',*/elm-stuff'
+let g:CommandTWildIgnore.=',*/resources/build'
+let g:CommandTWildIgnore.=',*/bower'
+let g:CommandTWildIgnore.=',*/bower_components'
+let g:CommandTWildIgnore.=',*/compiled'
+let g:CommandTTraverseSCM='pwd'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
 set foldlevelstart=0
@@ -304,8 +316,8 @@ function! RunTests(filename)
           :!echo > .test-commands
           redraw!
         " Fall back to a blocking test run with Bundler
-        elseif filereadable("Vagrantfile")
-            exec ":!clear & time through_vagrant rspec --color " . a:filename
+        "elseif filereadable("Vagrantfile")
+            "exec ":!clear & time through_vagrant rspec --color " . a:filename
         elseif filereadable("Gemfile")
             exec ":!clear & bundle exec rspec --color " . a:filename
         " Fall back to a normal blocking test run
@@ -347,4 +359,7 @@ vmap a. :Tabularize /\.<CR>
 "}}}
 " Clojure ------------------------------------------------------------------ {{{
 au BufNewFile,BufRead *.clj let g:rainbow_active = 1
+"}}}
+" Elm ---------------------------------------------------------------------- {{{
+let g:elm_format_autosave = 0
 "}}}
