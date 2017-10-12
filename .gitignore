@@ -36,6 +36,7 @@
 /.m2/
 /.mail
 /.mutt/alias
+/.mutt/gmail.cert
 /.mutt/signature
 /.netrc
 /.newsbeuter
