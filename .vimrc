@@ -201,6 +201,7 @@ let g:CommandTWildIgnore.=',*/resources/build'
 let g:CommandTWildIgnore.=',*/bower'
 let g:CommandTWildIgnore.=',*/bower_components'
 let g:CommandTWildIgnore.=',*/compiled'
+let g:CommandTWildIgnore.=',*/aws-backup'
 let g:CommandTTraverseSCM='pwd'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
