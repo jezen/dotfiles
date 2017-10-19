@@ -58,6 +58,7 @@
 /.trc
 /.vagrant.d
 /.vim/.netrwhist
+/.vim/plugged
 /.vimgolf
 /.viminfo
 /.weechat/

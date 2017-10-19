@@ -12,44 +12,39 @@
 " Init & Vundle ------------------------------------------------------------ {{{
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Need this for Vundle to work
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Gary Bernhardt’s colour scheme
-Plugin 'quanganhdo/grb256'
+Plug 'quanganhdo/grb256'
 set t_Co=256
 colorscheme grb256
 
 " Pimp my editor
-Plugin 'bling/vim-airline'
-Plugin 'wincent/command-t'
-Plugin 'https://github.com/mileszs/ack.vim'
-Plugin 'ervandew/supertab'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'https://github.com/chrisbra/unicode.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'godlygeek/tabular'
-Plugin 'reedes/vim-pencil'
-Plugin 'itchyny/calendar.vim'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'https://github.com/mileszs/ack.vim'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'https://github.com/chrisbra/unicode.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'godlygeek/tabular'
+Plug 'reedes/vim-pencil'
+Plug 'itchyny/calendar.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " Language specific
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'pbrisbin/vim-syntax-shakespeare'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'elmcast/elm-vim'
-"Plugin 'tpope/vim-fireplace'
-Plugin 'luochen1990/rainbow'
-Plugin 'enomsg/vim-haskellConcealPlus'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'kchmck/vim-coffee-script'
+Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'elmcast/elm-vim'
+Plug 'luochen1990/rainbow'
+Plug 'enomsg/vim-haskellConcealPlus'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 " }}}
 " Basic config ------------------------------------------------------------- {{{
@@ -187,23 +182,29 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-" Ignore stuff from Command-T
 set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
-let g:CommandTWildIgnore=&wildignore
-let g:CommandTWildIgnore.=',*/node_modules'
-let g:CommandTWildIgnore.=',*/vendor/bundle'
-let g:CommandTWildIgnore.=',*/dump'
-let g:CommandTWildIgnore.=',*/tmp'
-let g:CommandTWildIgnore.=',*/dist'
-let g:CommandTWildIgnore.=',*/_cache'
-let g:CommandTWildIgnore.=',*/_site'
-let g:CommandTWildIgnore.=',*/elm-stuff'
-let g:CommandTWildIgnore.=',*/resources/build'
-let g:CommandTWildIgnore.=',*/bower'
-let g:CommandTWildIgnore.=',*/bower_components'
-let g:CommandTWildIgnore.=',*/compiled'
-let g:CommandTWildIgnore.=',*/aws-backup'
-let g:CommandTTraverseSCM='pwd'
+set wildignore+=*/node_modules
+set wildignore+=*/vendor/bundle
+set wildignore+=*/dump
+set wildignore+=*/tmp
+set wildignore+=*/dist
+set wildignore+=*/_cache
+set wildignore+=*/_site
+set wildignore+=*/elm-stuff
+set wildignore+=*/resources/build
+set wildignore+=*/bower
+set wildignore+=*/bower_components
+set wildignore+=*/compiled
+set wildignore+=*/aws-backup
+set wildignore+=Library
+
+" FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
+set rtp+=/usr/local/opt/fzf
+set rtp+=~/.fzf
+nmap ; :Buffers<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>a :Ag<CR>
 " }}}
 " Folding ------------------------------------------------------------------ {{{
 set foldlevelstart=0

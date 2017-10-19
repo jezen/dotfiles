@@ -42,3 +42,4 @@ source ~/.bin/dinghy-connect.sh
 # Please get this shit out of my Ansible
 export ANSIBLE_NOCOWS=1
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
