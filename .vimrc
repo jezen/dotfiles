@@ -183,20 +183,6 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
-set wildignore+=*/node_modules
-set wildignore+=*/vendor/bundle
-set wildignore+=*/dump
-set wildignore+=*/tmp
-set wildignore+=*/dist
-set wildignore+=*/_cache
-set wildignore+=*/_site
-set wildignore+=*/elm-stuff
-set wildignore+=*/resources/build
-set wildignore+=*/bower
-set wildignore+=*/bower_components
-set wildignore+=*/compiled
-set wildignore+=*/aws-backup
-set wildignore+=Library
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
 set rtp+=/usr/local/opt/fzf
