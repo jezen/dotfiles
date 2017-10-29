@@ -48,6 +48,7 @@
 /.oh-my-zsh
 /.oracle_jre_usage/
 /.psql_history
+/.proselint/
 /.rediscli_history
 /.rnd
 /.rvm
