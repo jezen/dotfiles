@@ -26,7 +26,7 @@ Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'https://github.com/chrisbra/unicode.vim'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
 Plug 'reedes/vim-pencil'
 Plug 'itchyny/calendar.vim'
@@ -62,6 +62,10 @@ set secure " Only run autocommands owned by me
 let g:calendar_google_calendar=1
 let g:calendar_date_month_name=1
 let g:calendar_week_number=1
+" }}}
+" Linting ------------------------------------------------------------------ {{{
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 " }}}
 " UI ----------------------------------------------------------------------- {{{
 set number
