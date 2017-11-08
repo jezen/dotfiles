@@ -43,6 +43,7 @@ Plug 'mxw/vim-jsx'
 Plug 'elmcast/elm-vim'
 Plug 'luochen1990/rainbow'
 Plug 'enomsg/vim-haskellConcealPlus'
+Plug 'Twinside/vim-haskellFold'
 
 call plug#end()
 filetype plugin indent on
