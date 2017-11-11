@@ -20,15 +20,12 @@ set t_Co=256
 colorscheme grb256
 
 " Pimp my editor
-Plug 'bling/vim-airline'
 Plug 'https://github.com/mileszs/ack.vim'
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'https://github.com/chrisbra/unicode.vim'
 Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
-Plug 'reedes/vim-pencil'
 Plug 'itchyny/calendar.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
@@ -36,14 +33,9 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plug 'kchmck/vim-coffee-script'
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'elmcast/elm-vim'
-Plug 'luochen1990/rainbow'
-Plug 'enomsg/vim-haskellConcealPlus'
-Plug 'Twinside/vim-haskellFold'
 
 call plug#end()
 filetype plugin indent on
@@ -58,7 +50,8 @@ set noesckeys
 "set cryptmethod=blowfish2 " https://dgl.cx/2014/10/vim-blowfish
 set exrc " Enable use of project-specific .vimrc
 set secure " Only run autocommands owned by me
-
+" }}}
+" Calendar ----------------------------------------------------------------- {{{
 " https://github.com/itchyny/calendar.vim
 let g:calendar_google_calendar=1
 let g:calendar_date_month_name=1
@@ -69,12 +62,9 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 " }}}
 " UI ----------------------------------------------------------------------- {{{
-set number
-set relativenumber                " Show relative line numbers
 syntax on                         " Enable syntax highlighting
 set ruler                         " Show current position in status bar
-set cursorline                    " Highlight current line
-set synmaxcol=800                 " Don’t highlight lines longer than 800 chars
+set synmaxcol=80                  " Don’t highlight lines longer than 80 chars
 set wrap                          " Soft-wrap long lines
 set linebreak
 set showbreak=↪                   " Prefix linebreaks with this fancy arrow
@@ -82,11 +72,6 @@ set scrolloff=5                   " Keep at least 5 lines above/below
 set title                         " Change terminal title
 set showmode                      " Always show current mode
 set laststatus=2                  " Make sure airline isn’t hidden
-let g:airline_powerline_fonts = 1 " Custom airline font
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_symbols.space = "\ua0"
 set shortmess=atI                 " Hide intro message
 set showcmd                       " Show command as it’s being typed
 set list                          " Show invisible characters
@@ -231,7 +216,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.json setfiletype json syntax=javascript
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
   au BufNewFile,BufRead *.thor set filetype=ruby
-  au BufNewFile,BufRead *.txt,conf/messages.* call FoldParagraphs()
+  au BufNewFile,BufRead *.txt call FoldParagraphs()
   au BufNewFile,BufRead *.hs set formatprg=xargs\ pointfree
   au BufLeave           *.hs set formatprg=
   " https://codeyarns.com/2015/02/02/cannot-close-buffer-of-netrw-in-vim/
@@ -256,16 +241,6 @@ augroup line_return
     \ endif
 augroup END
 " }}}
-" Syntastic ---------------------------------------------------------------- {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-"}}}
 " Haskell ------------------------------------------------------------------ {{{
 let g:haskell_tabular = 1
 
@@ -276,9 +251,6 @@ vmap a< :Tabularize /<-<CR>
 vmap a( :Tabularize /(<CR>
 vmap a\| :Tabularize /\|<CR>
 vmap a. :Tabularize /\.<CR>
-"}}}
-" Clojure ------------------------------------------------------------------ {{{
-au BufNewFile,BufRead *.clj let g:rainbow_active = 1
 "}}}
 " Elm ---------------------------------------------------------------------- {{{
 let g:elm_format_autosave = 0
