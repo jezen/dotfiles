@@ -23,7 +23,6 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="bin:/Users/jgt/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jgt/.bin:#PATH"
-#export PATH=$(stack --verbosity 0 path --bin-path)
 
 # Setup aliases
 source ~/.aliases
@@ -31,11 +30,8 @@ source ~/.aliases
 # Fire up autoenv
 source /usr/local/opt/autoenv/activate.sh
 
-#
 # I’m clumsy and I keep closing panes/sessions with <c-d>
 set -o ignoreeof
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 source ~/.bin/dinghy-connect.sh
 
