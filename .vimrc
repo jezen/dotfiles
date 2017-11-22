@@ -30,6 +30,7 @@ Plug 'itchyny/calendar.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'jamessan/vim-gnupg'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
