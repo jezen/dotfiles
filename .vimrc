@@ -61,6 +61,9 @@ let g:calendar_week_number=1
 " Linting ------------------------------------------------------------------ {{{
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_linters = {
+\   'haskell': ['hlint','ghc-mod','hdevtools'],
+\}
 " }}}
 " UI ----------------------------------------------------------------------- {{{
 syntax on                         " Enable syntax highlighting
