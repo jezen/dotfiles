@@ -115,12 +115,6 @@ let mapleader="\<space>"
 " Clean trailing whitespace
 nnoremap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
-" Since I remapped H and L to move to the beginning and end of the current
-" line respectively, something in my subconscious made me start using K to
-" move to the top of the buffer. By default, K will open the man page for the
-" term under the cursor, which is completely useless to me.
-nnoremap K <nop>
-
 " Fast saving
 nmap <leader>s :w!<cr>
 
