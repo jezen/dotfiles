@@ -29,8 +29,9 @@ Plug 'godlygeek/tabular'
 Plug 'itchyny/calendar.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -173,8 +174,6 @@ nnoremap N Nzzzv
 set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
-set rtp+=/usr/local/opt/fzf
-set rtp+=~/.fzf
 nmap <Leader>r :Tags<CR>
 nmap <Leader>t :Files<CR>
 nmap <Leader>a :Ag<CR>

@@ -45,3 +45,5 @@ fi
 eval $(dinghy env)
 
 PATH=/Users/jgt/.bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
