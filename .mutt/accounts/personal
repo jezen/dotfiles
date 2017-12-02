@@ -2,7 +2,7 @@
 
 set from      = "jezen@jezenthomas.com"
 #set sendmail  = "/Users/jgt/Sites/mail-for-muggles/.stack-work/install/x86_64-osx/lts-7.14/8.0.1/bin/mail-for-muggles"
-set sendmail  = "/usr/local/bin/msmtp --account=personal"
+set sendmail  = "/Users/jgt/.nix-profile/bin/msmtp --account=personal"
 
 set spoolfile = "+personal/INBOX"
 set record    = "+personal/Sent"
