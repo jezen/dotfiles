@@ -20,15 +20,11 @@ plugins=(git fuck)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-export PATH="bin:/Users/jgt/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jgt/.bin:#PATH"
-
 # Setup aliases
 source ~/.aliases
 
 # Fire up autoenv
-source /usr/local/opt/autoenv/activate.sh
+#source /usr/local/opt/autoenv/activate.sh
 
 # I’m clumsy and I keep closing panes/sessions with <c-d>
 set -o ignoreeof
@@ -39,3 +35,9 @@ source ~/.bin/dinghy-connect.sh
 export ANSIBLE_NOCOWS=1
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
