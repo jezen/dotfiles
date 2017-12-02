@@ -81,3 +81,6 @@
 /projects
 /VirtualBox\ VMs
 nohup.out
+.fzf.bash
+.fzf.zsh
+.fzf/
