@@ -81,6 +81,8 @@
 /projects
 /VirtualBox\ VMs
 nohup.out
-.fzf.bash
-.fzf.zsh
-.fzf/
+/.fzf.bash
+/.fzf.zsh
+/.fzf/
+/.nix-profile
+/.nix-defexpr/
