@@ -9,7 +9,7 @@
 "   - Vincent Driessen
 "   - Benjamin Reitzammer
 
-" Init & Vundle ------------------------------------------------------------ {{{
+" Init & Plugins ----------------------------------------------------------- {{{
 set nocompatible
 filetype off
 call plug#begin('~/.vim/plugged')
@@ -60,6 +60,7 @@ let g:calendar_date_month_name=1
 let g:calendar_week_number=1
 " }}}
 " Linting ------------------------------------------------------------------ {{{
+let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
