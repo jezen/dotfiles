@@ -150,6 +150,7 @@ iabbrev fliptable （╯°□°）╯ ┻━┻
 iabbrev *shrug* ¯\_(ツ)_/¯
 iabbrev herewego ᕕ( ᐛ )ᕗ
 iabbrev dealwithit (⌐■_■)
+iabbrev lenny ( ͡° ͜ʖ ͡°)
 iabbrev yeahdawg 
       \<cr>▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
       \<cr>░░░░░ ░░░░▀█▄▀▄▀██████░▀█▄▀▄▀████▀
