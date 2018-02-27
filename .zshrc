@@ -41,9 +41,12 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
-# Connect to the Dinghy VM
-eval $(dinghy env)
-
-PATH=/Users/jgt/.bin:$PATH
+PATH=/Users/jgt/.bin:/Users/jgt/local/.bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# if test -e /etc/static/zshrc; then . /etc/static/zshrc; fi
+
+eval "$(direnv hook zsh)"
+
+export PATH="/usr/local/sbin:$PATH"
