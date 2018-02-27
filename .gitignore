@@ -41,6 +41,7 @@
 /.mutt/signature
 /.netrc
 /.newsbeuter
+/.nix/keys/signing-key.sec
 /.no-asepsis-os-restriction
 /.node-gyp
 /.node_repl_history
@@ -88,3 +89,4 @@ nohup.out
 /.fzf/
 /.nix-profile
 /.nix-defexpr/
+/.nixops/
