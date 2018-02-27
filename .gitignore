@@ -58,6 +58,7 @@
 /.stack
 /.threadscope/
 /.tmp
+/.travis/
 /.trc
 /.vagrant.d
 /.vim/.netrwhist
@@ -66,6 +67,7 @@
 /.viminfo
 /.weechat/
 /.wget-hsts
+/.yarnrc
 /.zcompdump*
 /.zsh-update
 /.zsh_history
