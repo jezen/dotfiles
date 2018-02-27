@@ -65,7 +65,7 @@ let g:ale_set_highlights = 0
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
-\   'haskell': ['hlint','ghc-mod','hdevtools'],
+\   'haskell': ['hlint -i "Reduce duplication"','ghc-mod','hdevtools'],
 \}
 " }}}
 " UI ----------------------------------------------------------------------- {{{
@@ -242,8 +242,9 @@ augroup line_return
 augroup END
 " }}}
 " Haskell ------------------------------------------------------------------ {{{
-let g:haskell_tabular = 1
+au FileType haskell set kp=hoogle
 
+let g:haskell_tabular = 1
 vmap a= :Tabularize /=<CR>
 vmap a: :Tabularize /::<CR>
 vmap a- :Tabularize /-><CR>
