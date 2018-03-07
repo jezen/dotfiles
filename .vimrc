@@ -33,12 +33,15 @@ Plug 'tpope/vim-dispatch'
 Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'janko-m/vim-test'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'pangloss/vim-javascript'
 Plug 'elmcast/elm-vim'
+Plug 'tpope/vim-fireplace'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 filetype plugin indent on
