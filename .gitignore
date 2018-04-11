@@ -66,6 +66,7 @@
 /.vim/plugged
 /.vimgolf
 /.viminfo
+/.vimv_history
 /.weechat/
 /.wget-hsts
 /.yarnrc
