@@ -1,1 +1,4 @@
+:def hlint const . return $ ":! hlint \"src\""
+:def hoogle \s -> return $ ":! hoogle --color --count=15 \"" ++ s ++ "\""
+:def doc \x -> return $ ":!hoogle --color --info \"" ++ x ++ "\""
 :set prompt "λ "
