@@ -42,6 +42,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'elmcast/elm-vim'
 Plug 'tpope/vim-fireplace'
 Plug 'chrisbra/csv.vim'
+Plug 'LnL7/vim-nix'
 
 call plug#end()
 filetype plugin indent on
