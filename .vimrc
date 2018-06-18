@@ -34,6 +34,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
+Plug 'junegunn/vim-easy-align'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -229,6 +230,7 @@ if has("autocmd")
   " quickfix window if there are no errors to report
   au QuickFixCmdPost [^l]* nested cwindow
   au QuickFixCmdPost    l* nested lwindow
+  au FileType markdown vmap <Leader><Bslash> :EasyAlign*<Bar><Enter>
 endif
 
 function! FoldParagraphs()
