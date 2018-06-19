@@ -59,6 +59,7 @@
 /.stack
 /.threadscope/
 /.tmp
+/tmp
 /.travis/
 /.trc
 /.vagrant.d
