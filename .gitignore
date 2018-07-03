@@ -92,3 +92,4 @@ nohup.out
 /.nix-profile
 /.nix-defexpr/
 /.nixops/
+.envrc
