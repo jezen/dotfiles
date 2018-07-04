@@ -52,6 +52,11 @@ weather_icon() {
   esac
 }
 
+if ! [ -x "$(command -v jq)" ]; then
+  echo "Error: jq is not installed." >&2
+  exit 1
+fi
+
 LOCATION=$(curl --silent http://ip-api.com/csv)
 CITY=$(echo "$LOCATION" | cut -d , -f 6)
 LAT=$(echo "$LOCATION" | cut -d , -f 8)
