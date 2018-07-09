@@ -18,8 +18,8 @@
 
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
-  nix.maxJobs = 1;
-  nix.buildCores = 1;
+  nix.maxJobs = 4;
+  nix.buildCores = 4;
 
   nix.distributedBuilds = true;
   nix.buildMachines = [ {

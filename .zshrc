@@ -29,24 +29,22 @@ source ~/.aliases
 # I’m clumsy and I keep closing panes/sessions with <c-d>
 set -o ignoreeof
 
-source ~/.bin/dinghy-connect.sh
-
-# Please get this shit out of my Ansible
-export ANSIBLE_NOCOWS=1
-
 export FZF_DEFAULT_COMMAND='ag -g ""'
-
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
 
 PATH=/Users/jgt/.bin:/Users/jgt/local/.bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# if test -e /etc/static/zshrc; then . /etc/static/zshrc; fi
+if test -e /etc/static/zshrc; then . /etc/static/zshrc; fi
 
 eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/sbin:$PATH"
+export EDITOR="vim"
+
+# Set up secure multi-user builds: non-root users build through the
+# Nix daemon.
+if [ ! -w /nix/var/nix/db ]; then
+    export NIX_REMOTE=daemon
+fi
+
