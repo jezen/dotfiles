@@ -21,16 +21,18 @@ API_KEY="413938bf72b9c28f84ac284a373da149"
 
 set -e
 
-# Not all icons for weather symbols have been added yet. If the weather
-# category is not matched in this case statement, the command output will
-# include the category ID. You can add the appropriate emoji as you go along.
-#
 # Weather data reference: http://openweathermap.org/weather-conditions
 weather_icon() {
   case $1 in
+    200|201|202|210|211|212|221|230|231|232) echo ☈
+      ;;
+    500|501|502|503|504|511|520|521|522|531) echo ☂
+      ;;
+    600|601|602|611|612|615|616|620|621|622) echo ☃
+      ;;
     800) echo ☀
       ;;
-    804) echo ☁ ☁️
+    801|802|803|804) echo ☁ 
       ;;
     *) echo "$1"
   esac
