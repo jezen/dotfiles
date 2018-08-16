@@ -41,6 +41,7 @@
 /.mutt/signature
 /.netrc
 /.newsbeuter
+/.ngrok2/
 /.nix/keys/signing-key.sec
 /.no-asepsis-os-restriction
 /.node-gyp
