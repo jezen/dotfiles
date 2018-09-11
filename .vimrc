@@ -246,6 +246,12 @@ augroup line_return
     \     execute 'normal! g`"zvzz' |
     \ endif
 augroup END
+
+" Automatically insert trailing white space for email
+augroup mail_trailing_whitespace " {
+    autocmd!
+    autocmd FileType mail setlocal formatoptions+=w
+augroup END " }
 " }}}
 " Haskell ------------------------------------------------------------------ {{{
 au FileType haskell set kp=hoogle
