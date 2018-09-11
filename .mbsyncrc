@@ -34,29 +34,9 @@ Channel personal-drafts
 Master :personal-remote:"Drafts"
 Slave :personal-local:"Drafts"
 
-Channel personal-gmail-allmail
-Master :personal-remote:"[Gmail]/All Mail"
-Slave :personal-local:"GmailAllMail"
-
-Channel personal-gmail-sent
-Master :personal-remote:"[Gmail]/Sent Mail"
-Slave :personal-local:"GmailSentMail"
-
 Channel personal-trash
 Master :personal-remote:"Trash"
 Slave :personal-local:"Trash"
-
-Channel personal-uber
-Master :personal-remote:"Uber"
-Slave :personal-local:"Uber"
-
-Channel personal-hbq
-Master :personal-remote:"HBQ"
-Slave :personal-local:"HBQ"
-
-Channel personal-nbm
-Master :personal-remote:"NBM"
-Slave :personal-local:"NBM"
 
 Group personal
 Channel personal-default
@@ -64,11 +44,6 @@ Channel personal-sent
 Channel personal-archive
 Channel personal-drafts
 Channel personal-trash
-Channel personal-gmail-allmail
-Channel personal-gmail-sent
-Channel personal-uber
-Channel personal-hbq
-Channel personal-nbm
 
 IMAPAccount zimpler
 Host imap.gmail.com

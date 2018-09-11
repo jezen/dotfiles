@@ -176,11 +176,6 @@ mailboxes "+-- jgt ----------------" \
           +personal/Drafts \
           +personal/Sent \
           +personal/Trash \
-          +personal/GmailAllMail \
-          +personal/GmailSentMail \
-          +personal/Uber \
-          +personal/HBQ \
-          +personal/NBM \
           +temporary/search \
           "+-- zimpler ------------" \
           +zimpler/INBOX \
