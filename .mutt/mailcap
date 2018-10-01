@@ -10,7 +10,7 @@ image/tiff; ~/.mutt/view_attachment.sh %s tiff
 application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
-text/html; open -a "Firefox" %s & sleep 2; test=sh -c 'test -n $DISPLAY'; needsterminal;
+text/html; ~/.mutt/view_attachment.sh %s html '/Applications/Google Chrome.app/'
 text/html; ~/.bin/html2text.py %s %{charset}; nametemplate=%s.html; copiousoutput
 
 text/plain; less
