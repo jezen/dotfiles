@@ -59,6 +59,7 @@
 /.ssh
 /.stack
 /.threadscope/
+/.tlaplus/
 /.tmp
 /tmp
 /.travis/
