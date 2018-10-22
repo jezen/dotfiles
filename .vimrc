@@ -267,6 +267,7 @@ vmap a. :Tabularize /\.<CR>
 
 nnoremap <leader>gr :Dispatch! tmux send-keys -t left ':reload' C-m<cr>
 nnoremap <leader>gt :Dispatch! tmux send-keys -t left ':test' C-m<cr>
+nnoremap <leader>gl :Dispatch! tmux send-keys -t left ':hlint' C-m<cr>
 "}}}
 " Elm ---------------------------------------------------------------------- {{{
 let g:elm_format_autosave = 0
