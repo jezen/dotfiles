@@ -42,9 +42,4 @@ eval "$(direnv hook zsh)"
 export PATH="/usr/local/sbin:$PATH"
 export EDITOR="vim"
 
-# Set up secure multi-user builds: non-root users build through the
-# Nix daemon.
-if [ ! -w /nix/var/nix/db ]; then
-    export NIX_REMOTE=daemon
-fi
-
+. /Users/jgt/.nix-profile/etc/profile.d/nix.sh

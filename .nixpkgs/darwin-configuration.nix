@@ -4,7 +4,34 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
-    [ pkgs.nix-repl
+    [
+    pkgs.vim
+    pkgs.mutt
+    pkgs.pinentry_mac
+    pkgs.notmuch
+    pkgs.isync
+    #pkgs.msmtp
+    pkgs.wget
+    pkgs.jq
+    pkgs.silver-searcher
+    pkgs.cloc
+    pkgs.tree
+    pkgs.weechat
+    pkgs.nixops
+    pkgs.fzf
+    pkgs.tmux
+    pkgs.reattach-to-user-namespace
+    pkgs.direnv
+    pkgs.git
+    pkgs.httpie
+    pkgs.tmate
+    pkgs.shellcheck
+    pkgs.pinentry
+    #pkgs.cachix
+    #pkgs.stack2nix
+    pkgs.nix-prefetch-git
+   #96  nix-env -i -I nixpkgs=https://github.com/nixos/nixpkgs/archive/7283740218a5178185a8c1bf0ecfa861f5f9f0f7.tar.gz stack2nix
+
     ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
@@ -14,7 +41,7 @@
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  system.stateVersion = 2;
+  system.stateVersion = 3;
 
   # You should generally set this to the total number of logical cores in your system.
   # $ sysctl -n hw.ncpu
