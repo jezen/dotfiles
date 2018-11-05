@@ -39,7 +39,10 @@ if test -e /etc/static/zshrc; then . /etc/static/zshrc; fi
 
 eval "$(direnv hook zsh)"
 
-export PATH="/usr/local/sbin:$PATH"
+PATH="/usr/local/sbin:$PATH"
+
+export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
+export PATH="/run/current-system/sw/bin:$PATH"
 export EDITOR="vim"
 
-. /Users/jgt/.nix-profile/etc/profile.d/nix.sh
+#. /Users/jgt/.nix-profile/etc/profile.d/nix.sh
