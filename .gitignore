@@ -13,6 +13,7 @@
 /.bash_history
 /.bash_profile
 /.bashrc
+/.bin/ngrok
 /.bundle
 /.cabal/
 /.cache
