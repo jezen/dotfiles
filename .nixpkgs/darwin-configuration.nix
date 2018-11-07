@@ -51,6 +51,8 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 3;
 
+  services.nix-daemon.enable = true;
+
   nix.distributedBuilds = true;
   nix.buildMachines = [ {
     hostName = "nix-docker";
