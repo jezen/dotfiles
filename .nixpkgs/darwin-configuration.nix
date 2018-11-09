@@ -31,7 +31,6 @@
       #pkgs.cachix
       #pkgs.stack2nix
       pkgs.nix-prefetch-git
-      # 96  nix-env -i -I nixpkgs=https://github.com/nixos/nixpkgs/archive/7283740218a5178185a8c1bf0ecfa861f5f9f0f7.tar.gz stack2nix
     ];
 
   # Use a custom configuration.nix location.
