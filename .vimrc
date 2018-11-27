@@ -35,13 +35,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
+Plug 'majutsushi/tagbar'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plug 'pbrisbin/vim-syntax-shakespeare'
 Plug 'pangloss/vim-javascript'
 Plug 'elmcast/elm-vim'
-Plug 'tpope/vim-fireplace'
 Plug 'chrisbra/csv.vim'
 Plug 'LnL7/vim-nix'
 

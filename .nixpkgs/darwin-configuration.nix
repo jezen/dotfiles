@@ -28,6 +28,7 @@
       pkgs.pinentry
       #pkgs.docker
       pkgs.docker_compose
+      pkgs.ctags
       #pkgs.cachix
       #pkgs.stack2nix
       pkgs.nix-prefetch-git
