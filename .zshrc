@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="jgt"
 
 # Display red dots while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -16,7 +16,7 @@ DISABLE_AUTO_TITLE=true
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fuck)
+plugins=(git fuck colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,5 +44,3 @@ PATH="/usr/local/sbin:$PATH"
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
 export PATH="/run/current-system/sw/bin:$PATH"
 export EDITOR="vim"
-
-#. /Users/jgt/.nix-profile/etc/profile.d/nix.sh
