@@ -178,19 +178,6 @@ mailboxes "+-- jgt ----------------" \
           +personal/Sent \
           +personal/Trash \
           +temporary/search \
-          "+-- zimpler ------------" \
-          +zimpler/INBOX \
-          +zimpler/Drafts \
-          +zimpler/Sent \
-          +zimpler/Trash \
-          "+-- uxpin --------------" \
-          +uxpin/INBOX \
-          +uxpin/Archive \
-          +uxpin/Drafts \
-          +uxpin/Sent \
-          +uxpin/Trash \
 
 folder-hook personal/*  source ~/.mutt/accounts/personal
-folder-hook zimpler/*   source ~/.mutt/accounts/zimpler
-folder-hook uxpin/*     source ~/.mutt/accounts/uxpin
 
