@@ -44,3 +44,4 @@ PATH="/usr/local/sbin:$PATH"
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
 export PATH="/run/current-system/sw/bin:$PATH"
 export EDITOR="vim"
+export GPG_TTY=$(tty)
