@@ -99,4 +99,5 @@ nohup.out
 /.nix-profile
 /.nix-defexpr/
 /.nixops/
+/.vim/spell
 .envrc
