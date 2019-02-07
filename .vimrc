@@ -20,22 +20,23 @@ set t_Co=256
 colorscheme grb256
 
 " Pimp my editor
-Plug 'https://github.com/mileszs/ack.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'https://github.com/chrisbra/unicode.vim'
-Plug 'w0rp/ale'
 Plug 'godlygeek/tabular'
+Plug 'https://github.com/chrisbra/unicode.vim'
+Plug 'https://github.com/mileszs/ack.vim'
 Plug 'itchyny/calendar.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-dispatch'
 Plug 'jamessan/vim-gnupg'
+Plug 'janko-m/vim-test'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'janko-m/vim-test'
 Plug 'junegunn/vim-easy-align'
 Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-surround'
+Plug 'w0rp/ale'
 
 " Language specific
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
