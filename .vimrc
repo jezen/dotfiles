@@ -180,7 +180,8 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
-set wildignore+=*.jpg,*.png,*.gif,*.aux                            " binary images
+set wildignore+=*.jpg,*.png,*.gif,*.aux
+set wildignore+=*.o,*.hi
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
 nmap <Leader>r :Tags<CR>
