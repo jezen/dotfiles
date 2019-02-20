@@ -2,13 +2,6 @@
 "   jezen@jezenthomas.com
 "   jezenthomas.com
 
-" Thanks to:
-"   - Steve Losh
-"   - Gary Bernhardt
-"   - Amir Salihefendic
-"   - Vincent Driessen
-"   - Benjamin Reitzammer
-
 " Init & Plugins ----------------------------------------------------------- {{{
 set nocompatible
 filetype off
@@ -50,8 +43,6 @@ call plug#end()
 filetype plugin indent on
 " }}}
 " Basic config ------------------------------------------------------------- {{{
-" This makes RVM work inside Vim.
-set shell=bash
 set lazyredraw
 set autoread
 set hidden
