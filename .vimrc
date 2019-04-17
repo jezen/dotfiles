@@ -248,17 +248,18 @@ augroup END " }
 au FileType haskell set kp=hoogle
 
 let g:haskell_tabular = 1
-vmap a= :Tabularize /=<CR>
-vmap a: :Tabularize /::<CR>
-vmap a- :Tabularize /-><CR>
-vmap a< :Tabularize /<-<CR>
-vmap a( :Tabularize /(<CR>
-vmap a\| :Tabularize /\|<CR>
-vmap a. :Tabularize /\.<CR>
+vmap a= :Tabularize /=<cr>
+vmap a: :Tabularize /::<cr>
+vmap a- :Tabularize /-><cr>
+vmap a< :Tabularize /<-<cr>
+vmap a( :Tabularize /(<cr>
+vmap a\| :Tabularize /\|<cr>
+vmap a. :Tabularize /\.<cr>
 
-nnoremap <leader>gr :Dispatch! tmux send-keys -t left ':reload' C-m<cr>
+nnoremap <leader>gr :Dispatch! tmux send-keys -t left ':serve' C-m<cr>
 nnoremap <leader>gt :Dispatch! tmux send-keys -t left ':test' C-m<cr>
 nnoremap <leader>gl :Dispatch! tmux send-keys -t left ':hlint' C-m<cr>
+nnoremap <leader>gs :%!stylish-haskell<cr>
 "}}}
 " Elm ---------------------------------------------------------------------- {{{
 let g:elm_format_autosave = 0
