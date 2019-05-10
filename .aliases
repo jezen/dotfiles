@@ -65,5 +65,7 @@ alias ix="curl -F 'f:1=<-' ix.io"
 
 alias docker-create-nixos="docker run --restart always --name nix-docker -d -p 3022:22 lnl7/nix:ssh"
 
-alias growl='osascript -e "display notification with title \"Process Completed.\""'
+function growl {
+  osascript -e "display notification with title \"$1\""
+}
 
