@@ -232,10 +232,10 @@ endfunction
 " Make sure Vim returns to the same line when reopening a file
 augroup line_return
   au!
-  au BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \     execute 'normal! g`"zvzz' |
-    \ endif
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+    \ |   exe "normal! g`\""
+    \ | endif
 augroup END
 
 " Automatically insert trailing white space for email
