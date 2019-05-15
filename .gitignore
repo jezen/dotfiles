@@ -23,6 +23,7 @@
 /.docker/
 /.ec2-keys
 /.elm
+/.elm-analyse/
 /.gdbinit
 /.gem
 /.ghc
