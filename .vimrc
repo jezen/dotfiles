@@ -256,9 +256,9 @@ vmap a( :Tabularize /(<cr>
 vmap a\| :Tabularize /\|<cr>
 vmap a. :Tabularize /\.<cr>
 
-nnoremap <leader>gr :Dispatch! tmux send-keys -t left ':serve' C-m<cr>
-nnoremap <leader>gt :Dispatch! tmux send-keys -t left ':test' C-m<cr>
-nnoremap <leader>gl :Dispatch! tmux send-keys -t left ':hlint' C-m<cr>
+nnoremap <leader>gr :Dispatch! tmux send-keys -t left C-e C-u C-l ':serve' C-m<cr>
+nnoremap <leader>gt :Dispatch! tmux send-keys -t left C-e C-u C-l ':test' C-m<cr>
+nnoremap <leader>gl :Dispatch! tmux send-keys -t left C-e C-u C-l ':hlint' C-m<cr>
 nnoremap <leader>gs :%!stylish-haskell<cr>
 "}}}
 " Elm ---------------------------------------------------------------------- {{{
