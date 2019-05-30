@@ -69,3 +69,4 @@ function growl {
   osascript -e "display notification with title \"$1\""
 }
 
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
