@@ -116,7 +116,7 @@ let mapleader="\<space>"
 nnoremap <leader>w mz:%s/\s\+$//<cr>:let @/=''<cr>`z
 
 " Fast saving
-nmap <leader>s :w!<cr>
+nnoremap <leader>s :w!<cr>
 
 " Save as super user
 noremap <leader>S :w !sudo tee % > /dev/null<CR>
