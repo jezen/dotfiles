@@ -68,6 +68,7 @@
 /.travis/
 /.trc
 /.vagrant.d
+/.videostream
 /.vim/.netrwhist
 /.vim/plugged
 /.vimgolf
