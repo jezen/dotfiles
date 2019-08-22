@@ -26,10 +26,10 @@
       pkgs.tmate
       pkgs.shellcheck
       pkgs.pinentry
-      #pkgs.docker
       pkgs.docker_compose
       pkgs.ctags
       pkgs.nix-prefetch-git
+      pkgs.bundix
     ];
 
   # Use a custom configuration.nix location.
