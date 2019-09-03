@@ -214,7 +214,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.json setfiletype json syntax=javascript
   au BufNewFile,BufRead *.cap setfiletype cap syntax=ruby
   au BufNewFile,BufRead *.thor set filetype=ruby
-  au BufNewFile,BufRead *.txt call FoldParagraphs()
+  au BufNewFile,BufRead *.msg call FoldParagraphs()
   " https://codeyarns.com/2015/02/02/cannot-close-buffer-of-netrw-in-vim/
   au FileType netrw setl bufhidden=wipe
   " Automatically open quickfix window when calling :make, or close the
