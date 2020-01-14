@@ -53,9 +53,9 @@
 
   nix.distributedBuilds = true;
   nix.buildMachines = [ {
-    hostName = "nix-docker";
+    hostName = "riskbook-hetzner";
     sshUser = "root";
-    sshKey = "/etc/nix/docker_rsa";
+    sshKey = "/etc/nix/riskbook_hetzner_root_rsa";
     systems = [ "x86_64-linux" ];
     maxJobs = 2;
     } ];
