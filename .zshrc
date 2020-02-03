@@ -45,3 +45,4 @@ export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/da
 export PATH="/run/current-system/sw/bin:$PATH"
 export EDITOR="vim"
 export GPG_TTY=$(tty)
+export RIPGREP_CONFIG_PATH=/Users/jgt/.ripgreprc

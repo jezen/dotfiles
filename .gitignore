@@ -106,3 +106,5 @@ nohup.out
 /.nixops/
 /.vim/spell
 .envrc
+dist
+node_modules

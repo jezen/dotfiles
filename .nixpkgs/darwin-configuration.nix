@@ -3,33 +3,32 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [ pkgs.vim
-      pkgs.mutt
-      pkgs.pinentry_mac
-      pkgs.notmuch
-      pkgs.isync
-      pkgs.msmtp
-      pkgs.wget
-      pkgs.jq
-      pkgs.silver-searcher
-      pkgs.cloc
-      pkgs.tree
-      pkgs.weechat
-      pkgs.nixops
-      pkgs.fzf
-      pkgs.tmux
-      pkgs.reattach-to-user-namespace
-      pkgs.direnv
-      pkgs.git
-      pkgs.httpie
-      pkgs.tmate
-      pkgs.shellcheck
-      pkgs.pinentry
-      pkgs.docker_compose
-      pkgs.ctags
-      pkgs.nix-prefetch-git
-      pkgs.bundix
+  environment.systemPackages = with pkgs;
+    [ vim
+      mutt
+      notmuch
+      isync
+      msmtp
+      wget
+      jq
+      silver-searcher
+      cloc
+      tree
+      weechat
+      nixops
+      fzf
+      tmux
+      reattach-to-user-namespace
+      direnv
+      git
+      httpie
+      tmate
+      shellcheck
+      pinentry
+      docker_compose
+      ctags
+      nix-prefetch-git
+      ripgrep
     ];
 
   # Use a custom configuration.nix location.
