@@ -1,5 +1,6 @@
 !/Library/KeyBindings
 *.DS_Store
+*.db
 /.CFUserTextEncoding
 /.Trash
 /.adobe
