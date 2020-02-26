@@ -36,8 +36,8 @@ set ssl_verify_host   = yes
 
 # Colours ----------------------------------------------------------------------
 #source ~/.mutt/colors/vombatidae.mutt
-#source ~/.mutt/colors/dracula.mutt
-source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
+source ~/.mutt/colors/dracula.mutt
+#source ~/.mutt/colors/mutt-colors-solarized-dark-256.muttrc
 
 # Sidebar Patch ----------------------------------------------------------------
 #set sidebar_delim   = '  │'
