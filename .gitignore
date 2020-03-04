@@ -107,5 +107,6 @@ nohup.out
 /.nixops/
 /.vim/spell
 .envrc
+.erlang.cookie
 dist
 node_modules
