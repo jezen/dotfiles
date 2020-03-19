@@ -1,11 +1,13 @@
 !/Library/KeyBindings
 *.DS_Store
 *.db
+.envrc
+.erlang.cookie
 /.CFUserTextEncoding
 /.Trash
 /.adobe
-/.ansible/
 /.ansible.cfg
+/.ansible/
 /.ansible_galaxy
 /.archey-ip
 /.asepsis-suppress-update-errors
@@ -25,11 +27,14 @@
 /.ec2-keys
 /.elm
 /.elm-analyse/
+/.fzf.bash
+/.fzf.zsh
+/.fzf/
 /.gdbinit
 /.gem
 /.ghc
-/.gpg-agent-info
 /.gnupg
+/.gpg-agent-info
 /.heroku
 /.htoprc
 /.httpie
@@ -45,7 +50,10 @@
 /.netrc
 /.newsbeuter
 /.ngrok2/
+/.nix-defexpr/
+/.nix-profile
 /.nix/keys/signing-key.sec
+/.nixops/
 /.no-asepsis-os-restriction
 /.node-gyp
 /.node_repl_history
@@ -53,8 +61,8 @@
 /.npmrc
 /.oh-my-zsh
 /.oracle_jre_usage/
-/.psql_history
 /.proselint/
+/.psql_history
 /.rediscli_history
 /.rnd
 /.rvm
@@ -65,13 +73,13 @@
 /.threadscope/
 /.tlaplus/
 /.tmp
-/tmp
 /.travis/
 /.trc
 /.vagrant.d
 /.videostream
 /.vim/.netrwhist
 /.vim/plugged
+/.vim/spell
 /.vimgolf
 /.viminfo
 /.vimv_history
@@ -83,8 +91,8 @@
 /.zsh-update
 /.zsh_history
 /Applications
-/Beamdog\ Library/
 /Beamdog\ Library
+/Beamdog\ Library/
 /Creative\ Cloud\ Files/
 /Desktop
 /Documents
@@ -96,17 +104,10 @@
 /Pictures
 /Public
 /Sites
-/projects
 /VirtualBox\ VMs
-nohup.out
-/.fzf.bash
-/.fzf.zsh
-/.fzf/
-/.nix-profile
-/.nix-defexpr/
-/.nixops/
-/.vim/spell
-.envrc
-.erlang.cookie
+/projects
+/tmp
 dist
+elm-stuff
 node_modules
+nohup.out

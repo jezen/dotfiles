@@ -4,7 +4,6 @@ echo "Halifax;    $(TZ='America/Halifax'   date +'%H:%M')"
 echo "Amsterdam;  $(TZ='Europe/Amsterdam'  date +'%H:%M')"
 echo "London;     $(TZ='Europe/London'     date +'%H:%M')"
 echo "Москва;     $(TZ='Europe/Moscow'     date +'%H:%M')"
-echo "Томск;      $(TZ='Asia/Tomsk'        date +'%H:%M')"
 echo "Foshan;     $(TZ='Asia/Shanghai'     date +'%H:%M')"
 
 #Time Zones:
