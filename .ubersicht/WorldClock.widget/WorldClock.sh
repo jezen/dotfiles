@@ -2,8 +2,8 @@
 
 echo  "London;  $(TZ='Europe/London'  date  +'%H:%M')"
 echo  "Warsaw;  $(TZ='Europe/Warsaw'  date  +'%H:%M')"
+echo  "Київ;    $(TZ='Europe/Kiev'    date  +'%H:%M')"
 echo  "Москва;  $(TZ='Europe/Moscow'  date  +'%H:%M')"
-echo  "Foshan;  $(TZ='Asia/Shanghai'  date  +'%H:%M')"
 
 #Time Zones:
 # Africa/Abidjan

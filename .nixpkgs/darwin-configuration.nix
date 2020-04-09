@@ -29,6 +29,7 @@
       ctags
       nix-prefetch-git
       ripgrep
+      mosh
     ];
 
   # Use a custom configuration.nix location.
