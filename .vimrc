@@ -171,13 +171,29 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 
+" Same when jumping
+nnoremap <c-o> <c-o>zz
+
+" Don't move on *
+nnoremap * *<c-o>
+
 set wildignore+=*.jpg,*.png,*.gif,*.aux
 set wildignore+=*.o,*.hi
 
 " FZF (replaces Ctrl-P, FuzzyFinder and Command-T)
-nmap <Leader>r :Tags<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>a :Ag<CR>
+nmap <leader>r :Tags<cr>
+nmap <leader>t :Files<cr>
+nmap <leader>a :Rg<cr>
+
+" Open a quickfix window for last search
+nnoremap <silent> <leader>/ :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+" Run word under cursor through ripgrep
+nnoremap ° :Rg <c-r><c-w><cr>
+
+" Prefer rg > ag > ack
+" https://hackercodex.com/guide/vim-search-find-in-project/
+let g:ackprg = 'rg -S --no-heading --vimgrep'
 " }}}
 " Folding ------------------------------------------------------------------ {{{
 set foldlevelstart=0
@@ -243,6 +259,13 @@ augroup mail_trailing_whitespace " {
   au!
   au FileType mail setlocal formatoptions+=w
 augroup END " }
+
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
 " }}}
 " Haskell ------------------------------------------------------------------ {{{
 au FileType haskell set kp=hoogle
