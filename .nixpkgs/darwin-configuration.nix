@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs;
     [ vim
       mutt
+      neomutt
       notmuch
       isync
       msmtp

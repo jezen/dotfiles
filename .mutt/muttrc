@@ -1,3 +1,5 @@
+set hostname="derpbook.local"
+
 # Paths ------------------------------------------------------------------------
 set folder           = ~/.mail               # mailbox location
 set certificate_file = ~/.mutt/certificates  # where to store certs
@@ -5,9 +7,6 @@ set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.tmp                # where to keep temp files
 set mbox_type        = Maildir               # mailbox type
 set signature        = ~/.mutt/signature
-
-# https://github.com/Homebrew/homebrew/issues/33419
-set smtp_authenticators = 'gssapi:login'
 
 # Basic Options ----------------------------------------------------------------
 set wait_key = no        # shut up, mutt
@@ -46,10 +45,10 @@ set sidebar_width   = 24
 #color sidebar_new color221 color233
 
 # Alias Setup ------------------------------------------------------------------
-set sort_alias=alias
-set reverse_alias=yes
-set display_filter = ~/.mutt/append_alias
-source "gpg --decrypt --quiet ~/.mutt/alias.gpg |"
+#set sort_alias=alias
+#set reverse_alias=yes
+#set display_filter = ~/.mutt/append_alias
+#source "gpg --decrypt --quiet ~/.mutt/alias.gpg |"
 
 # Status Bar -------------------------------------------------------------------
 set status_chars  = " *%A"
@@ -71,6 +70,8 @@ set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
 # Index Key Bindings -----------------------------------------------------------
+# https://neomutt.org/guide/configuration.html#bind-warnings
+bind index g        noop
 bind index gg       first-entry
 bind index G        last-entry
 bind index R        group-reply
@@ -112,10 +113,12 @@ set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
 alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings -----------------------------------------------------------
+# https://neomutt.org/guide/configuration.html#bind-warnings
 bind pager k    previous-line
 bind pager j    next-line
 bind pager \Cd  next-page
 bind pager \Cu  previous-page
+bind pager g    noop
 bind pager gg   top
 bind pager G    bottom
 
@@ -181,4 +184,3 @@ mailboxes "+-- jgt ----------------" \
           +temporary/search \
 
 folder-hook personal/*  source ~/.mutt/accounts/personal
-

@@ -44,7 +44,7 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 # Use tmux with 256 colours by default
 alias tmux="tmux -2"
 
-alias m="(cd ~/Desktop && mutt)"
+alias m="(cd ~/Desktop && neomutt)"
 
 alias vi="vim"
 
