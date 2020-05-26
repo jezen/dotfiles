@@ -19,9 +19,9 @@ steps:
   # and only applies to statements where each element occupies a single
   # line.
   - simple_align:
-      cases: true
-      top_level_patterns: true
-      records: true
+      cases: false
+      top_level_patterns: false
+      records: false
 
   # Import cleanup
   - imports:
@@ -39,7 +39,7 @@ steps:
       # - none: Do not perform any alignment.
       #
       # Default: global.
-      align: global
+      align: none
 
       # The following options affect only import list alignment.
       #
@@ -62,7 +62,7 @@ steps:
       #   >     (concat, foldl, foldr, head, init, last, length)
       #
       # Default: after_alias
-      list_align: after_alias
+      list_align: with_module_name
 
       # Right-pad the module names to align imports in a group:
       #
@@ -81,7 +81,7 @@ steps:
       #   >                                           init, last, length)
       #
       # Default: true
-      pad_module_names: true
+      pad_module_names: false
 
       # Long list align style takes effect when import is too long. This is
       # determined by 'columns' setting.
@@ -104,7 +104,7 @@ steps:
       #   >     )
       #
       # Default: inline
-      long_list_align: inline
+      long_list_align: new_line_multiline
 
       # Align empty list (importing instances)
       #
@@ -126,7 +126,7 @@ steps:
       #
       # - module_name: align under start of module name.
       #   Useful for 'file' and 'group' align settings.
-      list_padding: 4
+      list_padding: 7 # length of "import "
 
       # Separate lists option affects formatting of import list for type
       # or class. The only difference is single space between type and list
@@ -143,7 +143,7 @@ steps:
       #   > import Data.Foldable (Foldable(fold, foldl, foldMap))
       #
       # Default: true
-      separate_lists: true
+      separate_lists: false
 
       # Space surround option affects formatting of import lists on a single
       # line. The only difference is single space after the initial
@@ -183,7 +183,7 @@ steps:
       #   between actual import and closing bracket.
       #
       # Default: true
-      align: true
+      align: false
 
       # stylish-haskell can detect redundancy of some language pragmas. If this
       # is set to true, it will remove those redundant pragmas. Default: true.
@@ -197,6 +197,11 @@ steps:
 
   # Remove trailing whitespace
   - trailing_whitespace: {}
+
+  # Squash multiple spaces between the left and right hand sides of some
+  # elements into single spaces. Basically, this undoes the effect of
+  # simple_align but is a bit less conservative.
+  # - squash: {}
 
 # A common setting is the number of columns (parts of) code will be wrapped
 # to. Different steps take this into account. Default: 80.
@@ -212,7 +217,7 @@ columns: 80
 # - crlf: Convert to CRLF ("\r\n").
 #
 # Default: native.
-newline: native
+newline: lf
 
 # Sometimes, language extensions are specified in a cabal file or from the
 # command line instead of using language pragmas in the file. stylish-haskell
