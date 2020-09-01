@@ -31,6 +31,7 @@
       nix-prefetch-git
       ripgrep
       mosh
+      bundix
     ];
 
   # Use a custom configuration.nix location.
