@@ -1,3 +1,8 @@
+# nix-darwin automatically generates a zshrc that runs `prompt walters` which
+# adds the current path on the right side of the prompt. I don't want this, so
+# the prompt is set again here.
+type prompt >/dev/null 2>/dev/null && prompt off
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -23,9 +28,6 @@ source $ZSH/oh-my-zsh.sh
 # Setup aliases
 source ~/.aliases
 
-# Fire up autoenv
-#source /usr/local/opt/autoenv/activate.sh
-
 # I’m clumsy and I keep closing panes/sessions with <c-d>
 set -o ignoreeof
 
@@ -35,14 +37,6 @@ PATH=/Users/jgt/.bin:/Users/jgt/local/.bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if test -e /etc/static/zshrc; then . /etc/static/zshrc; fi
+type direnv >/dev/null 2>/dev/null && eval "$(direnv hook zsh)"
 
-eval "$(direnv hook zsh)"
-
-PATH="/usr/local/sbin:$PATH"
-
-export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
-export PATH="/run/current-system/sw/bin:$PATH"
-export EDITOR="vim"
-export GPG_TTY=$(tty)
-export RIPGREP_CONFIG_PATH=/Users/jgt/.ripgreprc
+. /Users/jgt/.nix-profile/etc/profile.d/nix.sh
